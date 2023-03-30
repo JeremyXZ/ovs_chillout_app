@@ -44,11 +44,11 @@ export default function Jokes() {
 
     return(
         <Wrapper onClick = {handleClick}>
-            <H4Wrapper>Random Joke:</H4Wrapper>
-            {jokes.part1 && <JokesSection>
+            <Title>Random Joke:</Title>
+            {jokes.part1 && <Text>
                 <div>{jokes.part1}</div>
                 <div>{jokes.part2}</div>
-            </JokesSection>
+            </Text>
             }
         </Wrapper>
         )
@@ -63,7 +63,7 @@ const Wrapper = styled.div`
     align-items: center;
 `
 
-const JokesSection =  styled.div`
+const Text =  styled.div`
     background-color: rgb(180, 224, 76);
     width: 80%;
     padding: 10px;
@@ -72,10 +72,12 @@ const JokesSection =  styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;   
-    gap: 10px;
+    gap: 5px;
     color: blue;
 `
-const H4Wrapper = styled.h4`
-     margin-left: 8px;
+const Title = styled.h4`    
+    font-family: 'FontdinerSwanky', sans-serif;
+    /* margin-left: 8px; */
+    color: blue;
 `
 

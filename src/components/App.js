@@ -2,14 +2,23 @@ import React from 'react'
 import styled, { createGlobalStyle } from "styled-components"
 import Header from './Header'
 import Jokes from './Jokes'
+import Quotes from './Quotes'
+
+
 
 
 const GlobalStyle = createGlobalStyle`
- :root {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;  
- }
+@font-face {
+    font-family: 'Beigly';
+    src: url('../fonts/FontdinerSwanky.ttf') format('ttf');
+    font-weight: bold;
+}
+:root {
+margin: 0;
+padding: 0;
+box-sizing: border-box;  
+
+}
 `
 
 const title = "Time to Chill Out"
@@ -23,7 +32,7 @@ export default function App() {
           title ={title}
           />
           <MainContainer>
-            <SectionWrapper>Quotes</SectionWrapper>   
+            <SectionWrapper><Quotes/></SectionWrapper>   
             <SectionWrapper>Weather</SectionWrapper>   
             <SectionWrapper>Reminder</SectionWrapper>   
             <SectionWrapper><Jokes/></SectionWrapper>
