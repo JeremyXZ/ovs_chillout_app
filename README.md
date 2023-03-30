@@ -28,5 +28,5 @@ Youtube Video: api call
 
 ###  Screenshot of large screen wireframe:
 <p align="center">
-     <img src="/src/images/large_screen.png" width="200px" />
+     <img src="/src/images/large_screen.png" width="250px" />
 </p> 
