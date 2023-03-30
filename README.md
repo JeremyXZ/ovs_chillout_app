@@ -29,7 +29,7 @@ Jokes
 </p> -->
 ## The following are the small screen, medium screen and large screen wireframes respectively: 
 <p float="left">
-  <img src="./images/small_screen.png" width="200px" />
+  <img src="/src/images/small_screen.png" width="200px" />
   <img src="./images/medium_screen.png" width="200px" /> 
   <img src="./images/large_screen.png" width="200px" />
 </p>
