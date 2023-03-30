@@ -5,31 +5,27 @@ A webpage helping Overseas students to relax after a long hard day of learning a
 ## Major components according to the initial plan
 
 Header: image randomly pulled from Unsplash as background
- - title
-local time/weather:
 - local time and home country time
 - local weather
-Inspirational quotes
-Cool 3d images or simple games
-Youtube Video
-Reminder
-Jokes
+- Page title
+
+local weather: api call
+Inspirational quotes: api call
+Jokes: api call
+Reminder: npm package
+Cool 3d images or simple games: iframe
+Youtube Video: api call
 
 
-## Wireframe screenshots
 
-<!-- ### for small screen
-<p align="center">
-    <img src="/src/images/small_screen_2.png" width="250px"/> 
-</p>
 
-### for large screen
-<p align="center">
-    <img src="/src/images/larger_screen_2.png" width="250px"/> 
-</p> -->
-## The following are the small screen, medium screen and large screen wireframes respectively: 
+### Screenshots of the small screen and medium screen wireframes respectively: 
 <p float="left">
   <img src="/src/images/small_screen.png" width="200px" />
-  <img src="./images/medium_screen.png" width="200px" /> 
-  <img src="./images/large_screen.png" width="200px" />
+  <img src="./images/medium_screen.png" width="200px" />  
 </p>
+
+###  Screenshot of large screen wireframe:
+<p align="center">
+     <img src="./images/large_screen.png" width="200px" />
+</p> 
