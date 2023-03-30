@@ -16,14 +16,11 @@ Reminder: npm package
 Cool 3d images or simple games: iframe
 Youtube Video: api call
 
-
-
-
 ### Screenshots of the small screen and medium screen wireframes respectively: 
 <p float="left">
   <img src="/src/images/small_screen.png" width="200px" />
   <img src="/src/images/medium_screen.png" width="200px" />
-  <img src="/src/images/large_screen.png" width="200px" />
+  <img src="/src/images/larger_screen.png" width="200px" />
 </p>
 
 ###  Screenshot of large screen wireframe:
