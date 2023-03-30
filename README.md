@@ -22,10 +22,10 @@ Youtube Video: api call
 ### Screenshots of the small screen and medium screen wireframes respectively: 
 <p float="left">
   <img src="/src/images/small_screen.png" width="200px" />
-  <img src="./images/medium_screen.png" width="200px" />  
+  <img src="/src/images/medium_screen.png" width="200px" />  
 </p>
 
 ###  Screenshot of large screen wireframe:
 <p align="center">
-     <img src="./images/large_screen.png" width="200px" />
+     <img src="/src/images/large_screen.png" width="200px" />
 </p> 
