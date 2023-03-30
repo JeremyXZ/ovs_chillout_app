@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled, { createGlobalStyle } from "styled-components"
 import Header from './Header'
-// import { QUERIES } from '../constants'
+import Jokes from './Jokes'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -26,7 +26,7 @@ export default function App() {
             <SectionWrapper>Quotes</SectionWrapper>   
             <SectionWrapper>Weather</SectionWrapper>   
             <SectionWrapper>Reminder</SectionWrapper>   
-            <SectionWrapper>Jokes</SectionWrapper>
+            <SectionWrapper><Jokes/></SectionWrapper>
             <SectionWrapper>Images</SectionWrapper>
             <SectionWrapper>Youtube</SectionWrapper>       
           </MainContainer>      
@@ -58,6 +58,15 @@ const SectionWrapper = styled.div`
   background-color: pink;
   grid-column: 1;
   grid-row: auto;
+
+  & > :nth-child(4) > * {
+    width: 90%;
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 8px;
+  }
   
   
 
