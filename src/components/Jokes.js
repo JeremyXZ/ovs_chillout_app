@@ -9,7 +9,7 @@ const params = [
 
 
 
-export default function Jokes() {
+function Jokes() {
     const [jokes, setJokes] = useState({part1: null, part2: null})
    
 
@@ -81,3 +81,4 @@ const Title = styled.h4`
     color: blue;
 `
 
+export default Jokes

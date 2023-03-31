@@ -11,7 +11,7 @@ const quoteOptions = {
 };
 
 
-export default function Quotes() {
+function Quotes() {
     const [quote, setQuote] = useState('')
     async function getQuote() {
         try{
@@ -66,3 +66,5 @@ const Text =  styled.div`
 const Title = styled.h4`
   color: blue;
 `
+
+export default Quotes

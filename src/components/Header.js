@@ -4,7 +4,7 @@ import {getImage} from '../utils'
 
 
 
-export default function Header({title}) {
+function Header({title}) {
   const [imageUrl, setImageUrl] = useState('')
 
   useEffect(() => {
@@ -125,10 +125,9 @@ const IframeWrapper = styled.div`
     padding: 0;
     /* justify-self: end; */
     margin: 0;
-  } 
-  
+  }   
 `
 
-
+export default Header
 
 

@@ -3,8 +3,11 @@ import styled, { createGlobalStyle } from "styled-components"
 import Header from './Header'
 import Jokes from './Jokes'
 import Quotes from './Quotes'
+import CodePen from './FunImages'
 
 
+const code1 = "gmOwJX"
+// const code2 = "wKqyqY"
 
 
 const GlobalStyle = createGlobalStyle`
@@ -23,7 +26,7 @@ box-sizing: border-box;
 
 const title = "Time to Chill Out"
 
-export default function App() {
+function App() {
   
     return (
       <>
@@ -36,7 +39,7 @@ export default function App() {
             <SectionWrapper>Weather</SectionWrapper>   
             <SectionWrapper>Reminder</SectionWrapper>   
             <SectionWrapper><Jokes/></SectionWrapper>
-            <SectionWrapper>Images</SectionWrapper>
+            <SectionWrapper><CodePen codePenSlug={code1} /></SectionWrapper>
             <SectionWrapper>Youtube</SectionWrapper>       
           </MainContainer>      
       </>
@@ -77,7 +80,6 @@ const SectionWrapper = styled.div`
     padding: 0 8px;
   }
   
-  
-
 `
 
+export default App
