@@ -59,8 +59,8 @@ const Wrapper = styled.div`
      padding: 8px;
     /* background-color: blue; */
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
 `
 
 const Text =  styled.div`
@@ -71,8 +71,9 @@ const Text =  styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;   
-    gap: 5px;
+    align-items: flex-start;
+   
+    gap: 10px;
     color: blue;
 `
 const Title = styled.h4`    

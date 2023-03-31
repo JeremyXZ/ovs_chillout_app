@@ -5,9 +5,8 @@ import Jokes from './Jokes'
 import Quotes from './Quotes'
 import CodePen from './FunImages'
 
+const codePenSlugList = ["gmOwJX", "bGpjZwN", "WxNVoq", "MWjBRWp", "XWpMONO", "YNrvpY", "BYbjyg", "DByKvO", "wKqyqY" ]
 
-const code1 = "gmOwJX"
-// const code2 = "wKqyqY"
 
 
 const GlobalStyle = createGlobalStyle`
@@ -39,7 +38,7 @@ function App() {
             <SectionWrapper>Weather</SectionWrapper>   
             <SectionWrapper>Reminder</SectionWrapper>   
             <SectionWrapper><Jokes/></SectionWrapper>
-            <SectionWrapper><CodePen codePenSlug={code1} /></SectionWrapper>
+            <SectionWrapper><CodePen codePenSlug={codePenSlugList[3]} /></SectionWrapper>
             <SectionWrapper>Youtube</SectionWrapper>       
           </MainContainer>      
       </>
@@ -57,28 +56,30 @@ const MainContainer = styled.div`
     display: grid;    
     grid-template-columns: 1fr;
     gap: 5px;
-    padding: 8px;
+    padding: 8px;  
+    
 
-
+  & > :nth-child(5) > * {
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0px;
+    /* gap: 5px; */
+  }
 
 `
 
 
 const SectionWrapper = styled.div`
-  /* /* width: 250px; */
-  /* height: 200px;  */
+  /* width: 250px; */
+  max-height: 280px; 
   background-color: pink;
   grid-column: 1;
   grid-row: auto;
+  overflow: hidden;
 
-  & > :nth-child(4) > * {
-    width: 90%;
-    background-color: red;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 0 8px;
-  }
   
 `
 

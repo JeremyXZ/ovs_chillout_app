@@ -45,8 +45,10 @@ function Quotes() {
 const Wrapper = styled.div`
     padding: 8px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    justify-content: center;
+    padding: 0 8px;
 `
 
 const Text =  styled.div`
