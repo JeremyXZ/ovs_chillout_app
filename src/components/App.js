@@ -4,8 +4,9 @@ import Header from './Header'
 import Jokes from './Jokes'
 import Quotes from './Quotes'
 import CodePen from './FunImages'
+import Weather from './Weather'
 
-const codePenSlugList = ["gmOwJX", "bGpjZwN", "WxNVoq", "MWjBRWp", "XWpMONO", "YNrvpY", "BYbjyg", "DByKvO", "wKqyqY" ]
+// const codePenSlugList = ["gmOwJX", "bGpjZwN", "WxNVoq", "MWjBRWp", "XWpMONO", "YNrvpY", "BYbjyg", "DByKvO", "wKqyqY" ]
 
 
 
@@ -35,10 +36,10 @@ function App() {
           />
           <MainContainer>
             <SectionWrapper><Quotes/></SectionWrapper>   
-            <SectionWrapper>Weather</SectionWrapper>   
+            <SectionWrapper><Weather/></SectionWrapper>   
             <SectionWrapper>Reminder</SectionWrapper>   
             <SectionWrapper><Jokes/></SectionWrapper>
-            <SectionWrapper><CodePen codePenSlug={codePenSlugList[3]} /></SectionWrapper>
+            <SectionWrapper><CodePen/></SectionWrapper>
             <SectionWrapper>Youtube</SectionWrapper>       
           </MainContainer>      
       </>
