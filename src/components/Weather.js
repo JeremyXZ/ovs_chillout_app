@@ -15,9 +15,7 @@ const Weather = () => {
     fetchWeatherInfo();
     // console.log(JSON.stringify(weatherInfo, null, 2))
   }, []);
-  useEffect(() => {
-    console.log(JSON.stringify(weatherInfo, null, 2));
-  }, [weatherInfo]);
+
   
   return (
     <div>

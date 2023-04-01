@@ -5,9 +5,7 @@ import Jokes from './Jokes'
 import Quotes from './Quotes'
 import CodePen from './FunImages'
 import Weather from './Weather'
-
-// const codePenSlugList = ["gmOwJX", "bGpjZwN", "WxNVoq", "MWjBRWp", "XWpMONO", "YNrvpY", "BYbjyg", "DByKvO", "wKqyqY" ]
-
+import YoutubeMusic from './Youtube'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -40,7 +38,7 @@ function App() {
             <SectionWrapper>Reminder</SectionWrapper>   
             <SectionWrapper><Jokes/></SectionWrapper>
             <SectionWrapper><CodePen/></SectionWrapper>
-            <SectionWrapper>Youtube</SectionWrapper>       
+            <SectionWrapper><YoutubeMusic/></SectionWrapper>       
           </MainContainer>      
       </>
     )
