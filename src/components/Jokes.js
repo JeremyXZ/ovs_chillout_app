@@ -71,8 +71,7 @@ const Text =  styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-   
+    align-items: flex-start;   
     gap: 10px;
     color: blue;
 `

@@ -17,7 +17,6 @@ export default function CodePen() {
 
   const CodePenContainer = styled.div`
     height: 250px;   
-    margin-bottom: -1em;
     overflow: hidden;
     display: flex;
     gap: 5px;
@@ -28,12 +27,10 @@ export default function CodePen() {
       display: block;
       align-items: center;
       justify-content: center;
-      /* border: 2px solid; */
       margin: 1em 0;
       padding: 1em;        
     }
   `;
- console.log('Rendering CodePenEmbed component...');
  
    function CodePenEmbed() {
     useEffect(() => {
@@ -67,10 +64,10 @@ export default function CodePen() {
         
         </div>
       </CodePenContainer>
-    );
+    )
   }
   
-    return <CodePenEmbed />;
+    return <CodePenEmbed />
   }
 
  

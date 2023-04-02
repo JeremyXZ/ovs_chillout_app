@@ -30,8 +30,9 @@ function YoutubeMusic({className}) {
     }
 
     function handleSubmit(e) {
-        e.preventDefault();
+        e.preventDefault()
         getMusics(title)
+        setTitle('')
     }
 
 
@@ -39,26 +40,33 @@ function YoutubeMusic({className}) {
     console.log("music array", musics)
     return(
         <Wrapper >
-             <form onSubmit={handleSubmit}>
+             <Form onSubmit={handleSubmit}>
                 <input 
                     autoFocus
                     type="text"
                     value={title}
                     placeholder="key in your music title"
                     onChange={(e) => setTitle(e.target.value)}
+                    style= {{
+                        padding: "10px 20px",
+                        fontSize: 16,
+                        }}
                 ></input>
-                <button className="title-search">Search</button>
-            </form>
-            {musics && (<Video>
-                <Image><img src={musics[1].thumbnail}/></Image>
+                <button 
+                    className="title-search"
+                    style = {{padding: "10px 20px",
+                    fontSize: 16,
+                    }}
+                >Search
+                </button>
+            </Form>
+            {musics?.[0] && (
+            <Video>
+                <Image><img src={musics[0].thumbnail}/></Image>
                 <Info>
-                <div>Title: {musics[1].title}</div>
-                <div>Artist: {musics[1].artist}</div>
-                <div>Album: {musics[1].album}</div>
-                <div>Duration: {musics[1].duration}</div>
-                {/* <pre>{JSON.stringify(musics[1], null, 2)}</pre> */}
-
-
+                    <div>Title: {musics[0].title}</div>
+                    <div>Artist: {musics[0].artist}</div>
+                    <div>Album: {musics[0].album}</div>    
                 </Info>
                 
             </Video>) 
@@ -70,17 +78,23 @@ function YoutubeMusic({className}) {
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    /* background-color: red; */
     align-items: center;
-    padding: 5px;
-    gap: 5px;
+    padding: 10px 0;
+    gap: 10px;
 
+`
+
+const Form = styled.form`
+    display: flex;
+    gap: 5px;
 `
 
 const Video = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 5px;
+    /* width: 250xp; */
+    
 
 
 `
@@ -98,5 +112,10 @@ const Info = styled.div`
     flex-direction: column;
     align-item: center;
 `
+
+
+
+
+
 
 export default YoutubeMusic

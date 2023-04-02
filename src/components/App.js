@@ -6,6 +6,8 @@ import Quotes from './Quotes'
 import CodePen from './FunImages'
 import Weather from './Weather'
 import YoutubeMusic from './Youtube'
+import Reminder from './Reminder'
+
 
 
 const GlobalStyle = createGlobalStyle`
@@ -18,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
 margin: 0;
 padding: 0;
 box-sizing: border-box;  
+height: 100%;
 
 }
 `
@@ -33,30 +36,24 @@ function App() {
           title ={title}
           />
           <MainContainer>
-            <SectionWrapper><Quotes/></SectionWrapper>   
+            {/* <SectionWrapper><Quotes/></SectionWrapper>    */}
             <SectionWrapper><Weather/></SectionWrapper>   
-            <SectionWrapper>Reminder</SectionWrapper>   
+            <SectionWrapper><Reminder/></SectionWrapper>   
             <SectionWrapper><Jokes/></SectionWrapper>
-            <SectionWrapper><CodePen/></SectionWrapper>
+            {/* <SectionWrapper><CodePen/></SectionWrapper> */}
             <SectionWrapper><YoutubeMusic/></SectionWrapper>       
           </MainContainer>      
       </>
     )
   }  
-
-  // <QuotesWrapper>Quotes</QuotesWrapper>   
-  // <WeatherWrapper>Weather</WeatherWrapper>   
-  // <ReminderWrapper>Reminder</ReminderWrapper>   
-  // <JokesWrapper>Jokes</JokesWrapper>
-  // <ImagesWrapper>Images</ImagesWrapper>
-  // <YoutubeWrapper>Youtube</YoutubeWrapper>  
-
+ 
 const MainContainer = styled.div`
+    height: 100vh;
     display: grid;    
     grid-template-columns: 1fr;
     gap: 5px;
     padding: 8px;  
-    
+       
 
   & > :nth-child(5) > * {
     width: 100%;
@@ -64,7 +61,7 @@ const MainContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 0px;
+    /* padding-right: 8px; */
     /* gap: 5px; */
   }
 
@@ -73,11 +70,11 @@ const MainContainer = styled.div`
 
 const SectionWrapper = styled.div`
   /* width: 250px; */
-  max-height: 280px; 
+  /* max-height: 280px;  */
   background-color: pink;
   grid-column: 1;
   grid-row: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
 
   
 `
