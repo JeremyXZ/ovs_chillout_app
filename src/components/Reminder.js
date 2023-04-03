@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Modal from "react-modal"
-import { Howl } from "howler"
+import reminderSign from '../images/timeToDo.jpeg'
 
 Modal.setAppElement("#root")
 
@@ -21,28 +21,25 @@ function Reminder() {
         second: "numeric",
       })
 
-      if (currentTime === time) {
+      if (currentTime === `${time}:00`) {
 
-        const sound = new Howl({
-          src: ['./chine.wav'],
-          volume: 0.5
-        })
-        console.log("audio object", sound)
+        // const sound = new Howl({
+        //   src: ['./chine.wav'],
+        //   volume: 0.5
+        // })
+        // console.log("audio object", sound)
 
-        sound.onerror = (error) => {
-          console.error('Failed to play audio:', error)
-        }
+        // sound.onerror = (error) => {
+        //   console.error('Failed to play audio:', error)
+        // }
         
-        console.log("Reminder: " + activities.join(", "))
+        // console.log("Reminder: " + activities.join(", "))
 
-        sound.play();
-        setMessage("Reminder: " + activities.join(", "))
+        // sound.play();
+        setMessage(activities.join(", "))
         setShowReminder(true);
       }
     }, 1000);
-
-
-
 
     return () => clearInterval(checkTime);
   }, [activities, time]);
@@ -85,9 +82,11 @@ function Reminder() {
       <Modal
         isOpen={showReminder}
         onRequestClose={() => setShowReminder(false)}
-        contentLabel="Reminder Modal"
+        contentLabel="friendly reminder"
       >
-        <h3>{message}</h3>
+        <h3>It's time to ....</h3>
+        <p>{message}</p>
+        <img src={reminderSign} alt="reminder sign"/>
         <button onClick={() => setShowReminder(false)}>Close</button>
       </Modal>
     </Wrapper>
