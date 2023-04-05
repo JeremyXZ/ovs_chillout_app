@@ -22,20 +22,7 @@ function Reminder() {
       })
 
       if (currentTime === `${time}:00`) {
-
-        // const sound = new Howl({
-        //   src: ['./chine.wav'],
-        //   volume: 0.5
-        // })
-        // console.log("audio object", sound)
-
-        // sound.onerror = (error) => {
-        //   console.error('Failed to play audio:', error)
-        // }
-        
-        // console.log("Reminder: " + activities.join(", "))
-
-        // sound.play();
+       
         setMessage(activities.join(", "))
         setShowReminder(true);
       }
@@ -68,7 +55,7 @@ function Reminder() {
         <button onClick={removeActivities}>Remove activities</button>
       </Form>
       {activities.length !== 0 && (
-        <div className="reminder">
+        <Text>
           <h3>Reminder:</h3>
           <ul>
             {activities.map((activity, index) => (
@@ -77,12 +64,13 @@ function Reminder() {
               </li>
             ))}
           </ul>
-        </div>
+        </Text>
       )}
       <Modal
         isOpen={showReminder}
         onRequestClose={() => setShowReminder(false)}
         contentLabel="friendly reminder"
+        
       >
         <h3>It's time to ....</h3>
         <p>{message}</p>
@@ -94,24 +82,62 @@ function Reminder() {
 }
 
 const Wrapper = styled.div`
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: flext-start;
   padding: 0 8px;
-  gap: 5px 10px;
+  flex-grow: 1;
+  gap: 33px;
 `;
 
 const Form = styled.form`
+  width: 180px;
+  height: 160px;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  margin-left: 8px;
+  gap: 6px;
 
-  & > * {
-    max-width: 100px;
-    max-height: 100px;
-    padding: 5px 15px;
-    font-size: 12px;
+  & button {
+    border-radius: 8px;
+    background-color: rgb(180, 224, 76);
   }
 `;
 
+const Text = styled.div`
+  height: 160px;     
+  max-height: 100px;
+  padding: 0 15px;
+  margin-top: 0;
+  font-size: 14px; 
+  display: flex;
+  flex-direction: column; 
+
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  & li {
+    margin-left: 0;
+    margin-top: 8px;
+    text-indent: 0;
+  }
+
+
+  & h3 + ul li: before {
+    content: "•";
+    margin-right: 0.5em;
+
+  }
+
+  h3 {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+`
 export default Reminder;
 

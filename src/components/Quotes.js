@@ -12,7 +12,8 @@ const quoteOptions = {
 
 
 function Quotes() {
-    const [quote, setQuote] = useState('')
+    
+    const [quote, setQuote] = useState("")
     async function getQuote() {
         try{
           const res = await fetch("https://motivation-quotes-api.p.rapidapi.com/api/quotes", quoteOptions)
@@ -36,37 +37,43 @@ function Quotes() {
 
     return (
         <Wrapper onClick={handleClick}>
-            <Title>Inspirational Quotes</Title>
+            <Title>Inspirational Quotes:</Title>
             <Text>{quote}</Text>
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-    padding: 8px;
-    display: flex;
-    /* flex-direction: column; */
-    /* align-items: center; */
+    height: 150px;
+    display: flex;    
     justify-content: center;
-    padding: 0 8px;
+    align-items: center;
+    padding: 0 8px;   
+   
+    @media (min-width: 768px) {
+      padding-left: 16px;
+    }
+
+    @media (min-width: 1024px) {
+      height: 180px;
+    }
 `
 
 const Text =  styled.div`
     background-color: rgb(180, 224, 76);
-    width: 80%;
     padding: 10px;
-    margin: 5px;
+    margin-right: 5px;
+    margin-left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;   
     gap: 5px;
-    color: blue;
+    color: blue;   
 `
 
-
 const Title = styled.h4`
-  color: blue;
+  color: blue;   
 `
 
 export default Quotes

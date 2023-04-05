@@ -7,6 +7,7 @@ import CodePen from './FunImages'
 import Weather from './Weather'
 import YoutubeMusic from './Youtube'
 import Reminder from './Reminder'
+import { Divider} from './Divider_styled'
 
 
 
@@ -36,47 +37,55 @@ function App() {
           title ={title}
           />
           <MainContainer>
-            {/* <SectionWrapper><Quotes/></SectionWrapper>    */}
-            <SectionWrapper><Weather/></SectionWrapper>   
-            <SectionWrapper><Reminder/></SectionWrapper>   
-            <SectionWrapper><Jokes/></SectionWrapper>
-            {/* <SectionWrapper><CodePen/></SectionWrapper> */}
-            <SectionWrapper><YoutubeMusic/></SectionWrapper>       
+            <div>
+              <Quotes/>
+              <Divider/> 
+            </div>
+            <div>
+              <Weather/>
+              <Divider/> 
+            </div>           
+            <div>
+              <Reminder/>
+              <Divider/> 
+            </div>  
+            <div>
+              <Jokes/>            
+              <Divider/>
+            </div>
+            <div>
+              <CodePen/>
+              <Divider/>
+            </div>
+            <div>
+              <YoutubeMusic/>
+              <Divider/>  
+            </div>     
           </MainContainer>      
       </>
     )
   }  
  
+
+
 const MainContainer = styled.div`
-    height: 100vh;
-    display: grid;    
-    grid-template-columns: 1fr;
-    gap: 5px;
-    padding: 8px;  
-       
-
-  & > :nth-child(5) > * {
-    width: 100%;
-    /* background-color: red; */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* padding-right: 8px; */
-    /* gap: 5px; */
-  }
-
-`
-
-
-const SectionWrapper = styled.div`
-  /* width: 250px; */
-  /* max-height: 280px;  */
-  background-color: pink;
-  grid-column: 1;
-  grid-row: auto;
-  /* overflow: hidden; */
-
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+  background-color: #FCF;
+  gap: 20px;
+  min-width: 300px;
+  max-width: 1350px;
   
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-auto-rows: auto;
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+  }
 `
-
 export default App

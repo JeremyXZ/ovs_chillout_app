@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
+// import { Divider} from './Divider_styled'
+
 const baseURL = "https://v2.jokeapi.dev"
 const categories = ["Programming", "Misc", "Pun", "Spooky", "Christmas"]
 const params = [
@@ -10,7 +12,7 @@ const params = [
 
 
 function Jokes() {
-    const [jokes, setJokes] = useState({part1: null, part2: null})
+    const [jokes, setJokes] = useState({part1: "Click here to get a joke", part2: null})
    
 
     const handleClick = () => {
@@ -42,7 +44,7 @@ function Jokes() {
     // }, [])
     
 
-    return(
+    return(       
         <Wrapper onClick = {handleClick}>
             <Title>Random Joke:</Title>
             {jokes.part1 && <Text>
@@ -50,22 +52,26 @@ function Jokes() {
                 <div>{jokes.part2}</div>
             </Text>
             }
-        </Wrapper>
-        )
-        
+        </Wrapper>     
+    )        
 }
 
 const Wrapper = styled.div`
-     padding: 8px;
-    /* background-color: blue; */
+    height: 160px;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 0 8px;
+
+    @media (min-width: 1024px) {
+        padding-left: 16px;
+        height: 180px;
+    }
 `
 
 const Text =  styled.div`
     background-color: rgb(180, 224, 76);
-    width: 80%;
+    /* width: 80%; */
     padding: 10px;
     margin: 5px;
     display: flex;
@@ -75,10 +81,14 @@ const Text =  styled.div`
     gap: 10px;
     color: blue;
 `
-const Title = styled.h4`    
+const Title = styled.h4`
+    display: flex;
+    align-items: center;
+    height: 150px;    
     font-family: 'FontdinerSwanky', sans-serif;
     /* margin-left: 8px; */
     color: blue;
+   
 `
 
 export default Jokes

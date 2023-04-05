@@ -61,45 +61,53 @@ function YoutubeMusic({className}) {
                 </button>
             </Form>
             {musics?.[0] && (
-            <Video>
+            <Info>
                 <Image><img src={musics[0].thumbnail}/></Image>
-                <Info>
+                <Text>
                     <div>Title: {musics[0].title}</div>
                     <div>Artist: {musics[0].artist}</div>
                     <div>Album: {musics[0].album}</div>    
-                </Info>
+                </Text>
                 
-            </Video>) 
+            </Info>) 
             }
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
+    height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 0;
-    gap: 10px;
+    padding: 0 8px;
+    gap: 16px;
+    flex-grow: 1;
+
+    @media (min-width: 768px) {
+    height: 180px;
+  }
 
 `
+
 
 const Form = styled.form`
     display: flex;
-    gap: 5px;
+    justify-content: flex-start;
+    gap: 16px;
+    padding-left: 0;
+    margin-left: 0;
+
 `
 
-const Video = styled.div`
+const Info = styled.div`
     display: flex;
     justify-content: space-between;
-    gap: 5px;
-    /* width: 250xp; */
-    
-
+    gap: 10px;
 
 `
 const Image = styled.div`
-    width: 180px;
+    width: 160px;
 
     & > img {
         width: 100%;
@@ -107,14 +115,12 @@ const Image = styled.div`
     }
 `
 
-const Info = styled.div`
+const Text = styled.div`
     display: flex;
     flex-direction: column;
-    align-item: center;
+    justify-content: center;
+    gap: 6px;
 `
-
-
-
 
 
 

@@ -13,25 +13,7 @@ export default function CodePen() {
     const nextIndex = (currentIndex + 1) % selectedSlugs.length;
     setSlug(selectedSlugs[nextIndex]);
   };
-
-
-  const CodePenContainer = styled.div`
-    height: 250px;   
-    overflow: hidden;
-    display: flex;
-    gap: 5px;
-    
-    .codepen {
-      height: 250px;
-      box-sizing: border-box;
-      display: block;
-      align-items: center;
-      justify-content: center;
-      margin: 1em 0;
-      padding: 1em;        
-    }
-  `;
- 
+  
    function CodePenEmbed() {
     useEffect(() => {
       const script = document.createElement('script');
@@ -45,29 +27,69 @@ export default function CodePen() {
 
    
 
-    return (
-      <CodePenContainer>
-        <button
+  return (
+      <Wrapper>
+        <Button
           onClick={handleClick}
-          style={{width: "40px", height: "25px", borderRadius: "50%", backgroundColor: "blue", color: "white", cursor: "pointer", padding: "5px", alignSelf: "center" }}
+          
         >Next
-        </button>
-        <div
+        </Button>
+        <Image>
+          <img
           className="codepen"
-          data-height="250"
+          data-height="150"
           data-theme-id="default"
           data-slug-hash={slug}
           data-default-tab="result"
-          data-preview="true"
-          // style={{ height: '250px', boxSizing: 'border-box', display: 'flex', alignItems: 'center', justifyContent: 'center',  margin: '1em 0', padding: '1em' }}
-        >
+          data-preview="true" 
+          />        
+        </Image>     
         
-        </div>
-      </CodePenContainer>
+      </Wrapper>
     )
   }
+
+  const Wrapper = styled.div`
+    height: 150px;
+    /* max-height: 100%; */
+    /* width: 25.5625em; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;   
+
+
+    @media (min-width: 768px) {
+      height: 180px;
+      padding-left: 16px;
+      justify-content: space-between;
+  }
+ 
+  `
+const Button = styled.button`      
+      width: 40px; 
+      height: 40px;
+      border-radius: 50% ;
+      background-color: blue;
+      color: white;
+      cursor: pointer; 
+      padding: 5px; 
+      align-self: center;
+      margin-right: 8px;
+    
+`
+
+const Image = styled.div`
+      display: flex;
+      /* flex-grow: 1; */
+      height: 90%;
+      /* max-width: 100%; */
+      overflow: hidden;
+      border: none;
+      
+    `
   
     return <CodePenEmbed />
-  }
+}
 
  
