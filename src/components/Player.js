@@ -3,10 +3,10 @@ import YouTube from 'react-youtube';
 function Player({videoId}) {
   
     const opts = {
-      height: '390',
-      width: '640',
+      height: '160',
+      width: '260',
       playerVars: {
-        // https://developers.google.com/youtube/player_parameters
+        // https://developers.google.com/youtube/player_parameters,
         autoplay: 1,
       },
     };

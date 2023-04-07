@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import styled, { createGlobalStyle } from "styled-components"
 import Header from './Header'
 import Jokes from './Jokes'
@@ -8,6 +8,8 @@ import Weather from './Weather'
 import YoutubeMusic from './Youtube'
 import Reminder from './Reminder'
 import { Divider} from './Divider_styled'
+import Player from './Player';
+
 
 
 
@@ -29,9 +31,12 @@ height: 100%;
 const title = "Time to Chill Out"
 
 function App() {
+  const [musics, setMusics] = useState([])
+  const [isFullScreen, setIsFullScreen] = useState(false)
   
+
     return (
-      <>
+      <Wrapper>
       <GlobalStyle/>        
           <Header 
           title ={title}
@@ -58,15 +63,37 @@ function App() {
               <Divider/>
             </div>
             <div>
-              <YoutubeMusic/>
+              <YoutubeMusic setMusics={setMusics}/>
               <Divider/>  
-            </div>     
+            </div>
+            {musics && (
+                musics.map(music  => (
+                  <InfoWrapper key={music.id} onClick={() => setIsFullScreen(!isFullScreen)} >
+                    <Info >
+                        <Text>
+                            <li>Title: {music.title}</li>
+                            <li>Artist: {music.artist}</li>
+                            <li>Album: {music.album}</li>    
+                        </Text>
+                        {/* <Image><img src={music.thumbnail}/></Image>  */}
+                        <Player videoId={music.id}/>                   
+                    </Info>
+                    <Divider/>
+                  </InfoWrapper>)
+                  ) )
+            }   
           </MainContainer>      
-      </>
+      </Wrapper>
     )
   }  
  
+const Wrapper = styled.div`
+  display: grid;
+  place-content: center;
+  margin: 0;
+  padding:0;
 
+`
 
 const MainContainer = styled.div`
   display: grid;
@@ -88,4 +115,59 @@ const MainContainer = styled.div`
     grid-auto-rows: auto;
   }
 `
+const InfoWrapper = styled.div`
+  ${(props) => props.fullScreen && `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  `}
+      
+`
+
+const Info = styled.div`
+    
+    height: 150px;
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    gap: 5px;
+
+    ${(props) => props.fullScreen && `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  `}
+
+
+    @media (min-width: 768px) {
+      justify-content: center;
+      height: 180px;
+      gap: 10px;
+      
+  }
+`
+
+const Image = styled.div`
+    /* width: 160px; */
+
+    /* & > img {
+        width: 100%;
+        display: block;
+    } */
+`
+
+const Text = styled.ul`
+  padding: 0;
+  margin: 0;
+  list-style: none;
+`
+
 export default App

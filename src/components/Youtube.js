@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {useState} from 'react'
-import Player from './Player';
+
 
 const options = {
 	method: 'GET',
@@ -10,15 +10,15 @@ const options = {
 	}
 };
 
-function YoutubeMusic({className}) {
-    const [musics, setMusics] = useState([])
+function YoutubeMusic({setMusics}) {
+   
     const [title, setTitle] = useState('')
 
    
     async function getMusics(title) {
         // title = encodeURIComponent(title);
         try {
-        const res = await fetch(`https://ytube-videos.p.rapidapi.com/search-music?q=${title}&max=10&lang=EN`, options)
+        const res = await fetch(`https://ytube-videos.p.rapidapi.com/search-music?q=${title}&max=6&lang=EN`, options)
         const data =  await res.json()
                 
         setMusics(data)
@@ -37,7 +37,7 @@ function YoutubeMusic({className}) {
 
 
     console.log("title", title)
-    console.log("music array", musics)
+    // console.log("music array", musics)
     return(
         <Wrapper >
              <Form onSubmit={handleSubmit}>
@@ -53,24 +53,12 @@ function YoutubeMusic({className}) {
                         }}
                 ></input>
                 <button 
-                    className="title-search"
                     style = {{padding: "10px 20px",
                     fontSize: 16,
                     }}
                 >Search
                 </button>
-            </Form>
-            {musics?.[0] && (
-            <Info>
-                <Image><img src={musics[0].thumbnail}/></Image>
-                <Text>
-                    <div>Title: {musics[0].title}</div>
-                    <div>Artist: {musics[0].artist}</div>
-                    <div>Album: {musics[0].album}</div>    
-                </Text>
-                
-            </Info>) 
-            }
+            </Form>            
         </Wrapper>
     )
 }
@@ -99,29 +87,6 @@ const Form = styled.form`
     margin-left: 0;
 
 `
-
-const Info = styled.div`
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-
-`
-const Image = styled.div`
-    width: 160px;
-
-    & > img {
-        width: 100%;
-        display: block;
-    }
-`
-
-const Text = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-`
-
 
 
 export default YoutubeMusic
