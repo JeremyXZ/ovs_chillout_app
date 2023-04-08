@@ -10,10 +10,10 @@ const bar = keyframes`
 
 export const Divider = styled.div`
     width: 100%;
-    height: 1px;
+    height: 2px;
     display: block;
     position: relative;
-    margin-bottom: 0em;
+    margin-bottom: 0.3em;
 
     &:after,
     &:before {
@@ -35,19 +35,19 @@ export const Divider = styled.div`
         z-index: 1;
     }
 
-    &:after {
-        transition: opacity 0.3s ease, animation 0.3s ease;
-        background: linear-gradient(
-            to right,
-            #62efab 5%, #F2EA7D 15%, #F2EA7D 25%, #FF8797 35%,
-            #FF8797 45%, #e1a4f4 55%, #e1a4f4 65%, #82fff4 75%,
-            #82fff4 85%, #62efab 95%);
-        background-size: 200%;
-        background-position: 0%;
-        animation: ${bar} 15s linear infinite;
+        &:after {
+            transition: opacity 0.3s ease, animation 0.3s ease;
+            background: linear-gradient(
+                to right,
+                #62efab 5%, #F2EA7D 15%, #F2EA7D 25%, #FF8797 35%,
+                #FF8797 45%, #e1a4f4 55%, #e1a4f4 65%, #82fff4 75%,
+                #82fff4 85%, #62efab 95%);
+            background-size: 200%;
+            background-position: 0%;
+            animation: ${bar} 15s linear infinite;
     }
-    `
-    export const AnimDivider = styled(Divider)`
+`
+export const AnimDivider = styled(Divider)`
    
         &:before {
             background: linear-gradient(
@@ -87,4 +87,4 @@ export const Divider = styled.div`
             }
         }
     
-   `
+`

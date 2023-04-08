@@ -45,13 +45,15 @@ const Wrapper = styled.header`
   grid-template-rows: auto auto;
   min-width: 300px;
   max-width: 1350px;
+  padding-bottom:16px; 
 
   @media (min-width: 768px) {
-    grid-column-gap: 20vw;
+    grid-column-gap: 18vw;
+    padding-bottom:8px; 
   }
 
   @media (min-width: 1024px) {
-    grid-column-gap: 30vw;
+    /* grid-column-gap: 30vw; */
   }
 
   & > :nth-child(1) {
@@ -75,22 +77,24 @@ const Wrapper = styled.header`
 ` 
 
 const IframeWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: grid;
+    place-items: center;
   & > h3 {
     color: yellow;
     margin: 0;
     padding: 0;
-   
+    margin-left: -18px;
+    margin-top: -10px;
+
   }
   
   & > iframe {
     margin: 0;
     padding: 0;
-    margin: 0;
-  }   
+  
+  }
+  
+
 `
 
 const TitleWrapper = styled.h1` 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-// import { Divider} from './Divider_styled'
+
 
 const baseURL = "https://v2.jokeapi.dev"
 const categories = ["Programming", "Misc", "Pun", "Spooky", "Christmas"]
@@ -63,9 +63,14 @@ const Wrapper = styled.div`
     align-items: center;
     padding: 0 8px;
 
+    @media (min-width: 768px) {
+       
+        height: 180px;
+    }
+
     @media (min-width: 1024px) {
         padding-left: 16px;
-        height: 180px;
+        /* height: 180px; */
     }
 `
 

@@ -66,11 +66,11 @@ function YoutubeMusic({setMusics}) {
 const Wrapper = styled.div`
     height: 150px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 0 8px;
     gap: 16px;
-    flex-grow: 1;
+   
 
     @media (min-width: 768px) {
     height: 180px;
@@ -85,7 +85,6 @@ const Form = styled.form`
     gap: 16px;
     padding-left: 0;
     margin-left: 0;
-
 `
 
 

@@ -82,7 +82,7 @@ function Reminder() {
 }
 
 const Wrapper = styled.div`
-  height: 100%;
+  height: 180px;
   display: flex;
   justify-content: center;
   align-items: flext-start;

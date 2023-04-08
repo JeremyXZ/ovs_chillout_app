@@ -17,7 +17,7 @@ export default function CodePen() {
     setSlug(selectedSlugs[nextIndex]);
   };
   
-
+ 
 
    function CodePenEmbed() {
     useEffect(() => {
@@ -63,13 +63,14 @@ export default function CodePen() {
           
         >Next
         </Button>
-        
+        {/* <Button onClick={() => getFullScreen("100%", "100%")}>Enlarge</Button>  */}
         
         <Image>
           <img
           // ref={imgRef}       
           className="codepen"
-          data-height="100%"
+          data-height="150"
+          datat-width="300"
           data-theme-id="default"
           data-slug-hash={slug}
           data-default-tab="result"
@@ -86,11 +87,11 @@ export default function CodePen() {
             data-slug-hash={slug}
             data-default-tab="result"
             data-preview="true" 
-            // style={{ width: imgSize.width, height: imgSize.height }}
+            style={{ width: imgSize.width, height: imgSize.height }}
 
             />        
           </FullImage>
-          <Button onClick={() => getFullScreen("100%", "100%")}>Enlarge</Button>  
+          <Button onClick={() => getFullScreen(400, "200%")}>Enlarge</Button>  
           <Button onClick={() => setIsFullScreen(false)}>Exit full screen</Button>  
       </FullScreenWrapper>
         }
@@ -132,7 +133,8 @@ const FullImage = styled.div`
     display: block;
     width: ${imgSize.width};
     height: ${imgSize.height};
-    object-fit: ${imgSize.width === "100%" ? "contain" : "cover"};
+    /* object-fit: ${imgSize.width === "100%" ? "contain" : "cover"}; */
+    object-fit: cover;
   }
 `;
 

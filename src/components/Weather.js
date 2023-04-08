@@ -7,7 +7,7 @@ const Weather = () => {
   useEffect(() => {
     const fetchWeatherInfo = async () => {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=Beijing&appid=fe14a288d35ede0a0f95bc8e570dd41b`
+        `https://api.openweathermap.org/data/2.5/weather?q=Bournemouth&appid=fe14a288d35ede0a0f95bc8e570dd41b`
       );
       const data = await response.json();
       setWeatherInfo(data);
