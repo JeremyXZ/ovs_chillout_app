@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 
@@ -39,10 +39,7 @@ function Jokes() {
             }, 3000);
         }
     }   
-    // useEffect(() => {
-    //     getJokes()
-    // }, [])
-    
+       
 
     return(       
         <Wrapper onClick = {handleClick}>

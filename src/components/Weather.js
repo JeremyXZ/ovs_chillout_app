@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+
+
+const weatherKey = process.env.REACT_APP_OPEN_WEATHER_KEY
 
 const Weather = () => {
   const [weatherInfo, setWeatherInfo] = useState(null);
@@ -7,7 +10,7 @@ const Weather = () => {
   useEffect(() => {
     const fetchWeatherInfo = async () => {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=Bournemouth&appid=fe14a288d35ede0a0f95bc8e570dd41b`
+        `https://api.openweathermap.org/data/2.5/weather?q=Bournemouth&appid=${weatherKey}`
       );
       const data = await response.json();
       setWeatherInfo(data);

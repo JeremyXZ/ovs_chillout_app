@@ -1,11 +1,13 @@
 
-import {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components';
+
+const rapidKey = process.env.REACT_APP_RAPID_API_KEY
 
 const quoteOptions = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '1678496cbemsha53fcfb968cd5e9p1f48a8jsn430498a0ffc1',
+		'X-RapidAPI-Key': `${rapidKey}`,
 		'X-RapidAPI-Host': 'motivation-quotes-api.p.rapidapi.com'
 	}
 };

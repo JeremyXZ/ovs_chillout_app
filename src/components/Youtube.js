@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import {useState} from 'react'
+import React, {useState} from 'react'
 
+const rapidKey = process.env.REACT_APP_RAPID_API_KEY
 
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '1678496cbemsha53fcfb968cd5e9p1f48a8jsn430498a0ffc1',
+		'X-RapidAPI-Key': `${rapidKey}`,
 		'X-RapidAPI-Host': 'ytube-videos.p.rapidapi.com'
 	}
 };

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styled, { createGlobalStyle } from "styled-components"
 import Header from './Header'
 import Jokes from './Jokes'
@@ -91,74 +91,10 @@ function App() {
   place-content: center;
   margin: 0;
   padding: 0;
-  
+  height: 100vh;
 `
 
-// const MainContainer = styled.div`
-//   display: grid;
-//   grid-template-columns: 100%;
-//   grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
-//   background-color: #FCF;
-//   gap: 20px;
-//   min-width: 300px;
-//   max-width: 1350px;
-  
-//   @media (min-width: 768px) {
-//     grid-template-columns: repeat(2, minmax(300px, 1fr));
-//     grid-auto-rows: auto;
-//   }
-  
-//   @media (min-width: 1024px) {
-//     grid-template-columns: repeat(3, minmax(300px, 1fr));
-//     /* grid-template-rows: repeat(2, minmax(160px, 1fr)); */
-//     grid-auto-rows: auto;
-//   }
-// `
-// const InfoWrapper = styled.div`
-//   ${(props) => props.fullScreen && `
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     z-index: 9999;
-//   `}
-      
-// `
 
-// const Info = styled.div`
-    
-//     max-height: 160px;
-//     /* width: 100%; */
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     padding: 0 16px;
-//     gap: 5px;
-
-//     ${(props) => props.fullScreen && `
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     z-index: 9999;
-//   `}
-
-
-//     @media (min-width: 768px) {
-//       justify-content: center;
-//       height: 180px;
-//       gap: 10px;
-      
-//   }
-// `
-
-// const Text = styled.ul`
-//   padding: 0;
-//   margin: 0;
-//   list-style: none;
-// `
 
 const MainContainer = styled.div`
   display: grid;

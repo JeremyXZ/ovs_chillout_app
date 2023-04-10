@@ -102,7 +102,7 @@ const TitleWrapper = styled.h1`
   font: cookie, cursive;
   font-size: 30px;
   @media (min-width: 768px) {
-    letter-spacing: 2vw;
+    letter-spacing: 1.5vw;
   }
   ` 
 export default Header
