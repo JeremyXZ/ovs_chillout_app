@@ -74,7 +74,8 @@ export default function CodePen() {
           data-theme-id="default"
           data-slug-hash={slug}
           data-default-tab="result"
-          data-preview="true"          
+          data-preview="true" 
+          alt=''         
           />        
         </Image>            
       </Wrapper>
@@ -88,6 +89,7 @@ export default function CodePen() {
             data-default-tab="result"
             data-preview="true" 
             style={{ width: imgSize.width, height: imgSize.height }}
+            alt=''
 
             />        
           </FullImage>

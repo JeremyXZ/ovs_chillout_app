@@ -3,7 +3,7 @@
   
 export async function getImage(setImageUrl) { 
     const numImagesAvailable = 2100 // total photos in the collection
-    const numItemsToGenerate = 20; //how many photos you want to display
+    // const numItemsToGenerate = 20; //how many photos you want to display
     const imageWidth = 900;    //image width in pixels
     const imageHeight = 900;   //image height in pixels
     const collectionID = 3672442  //Beach & Coastal, the collection ID from the original url
