@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React, {useState} from 'react'
 
+
 const rapidKey = process.env.REACT_APP_RAPID_API_KEY
 
 const options = {
@@ -40,8 +41,8 @@ function YoutubeMusic({setMusics}) {
     console.log("title", title)
     // console.log("music array", musics)
     return(
-        <Wrapper >
-             <Form onSubmit={handleSubmit}>
+        
+             <Wrapper onSubmit={handleSubmit}>
                 <input 
                     autoFocus
                     type="text"
@@ -49,24 +50,27 @@ function YoutubeMusic({setMusics}) {
                     placeholder="key in your music title"
                     onChange={(e) => setTitle(e.target.value)}
                     style= {{
-                        padding: "10px 20px",
-                        fontSize: 16,
+                        padding: "10px 20px"
+                        
                         }}
                 ></input>
                 <button 
-                    style = {{padding: "10px 20px",
-                    fontSize: 16,
+                    style = {{padding: "10px 20px",                    
+                    backgroundColor: "rgb(180, 224, 76)",
+                    borderRadius: "5px",
+                    cursor: "pointer"
                     }}
                 >Search
                 </button>
-            </Form>            
-        </Wrapper>
+            </Wrapper>            
+        
     )
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.form`
     height: 150px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 8px;
@@ -80,13 +84,13 @@ const Wrapper = styled.div`
 `
 
 
-const Form = styled.form`
-    display: flex;
-    justify-content: flex-start;
-    gap: 16px;
-    padding-left: 0;
-    margin-left: 0;
-`
+// const Form = styled.form`
+//     display: flex;
+//     justify-content: flex-start;
+//     gap: 16px;
+//     padding-left: 0;
+//     margin-left: 0;
+// `
 
 
 export default YoutubeMusic

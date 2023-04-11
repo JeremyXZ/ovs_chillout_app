@@ -49,11 +49,12 @@ const Wrapper = styled.header`
 
   @media (min-width: 768px) {
     grid-column-gap: 18vw;
-    padding-bottom:8px; 
+        
   }
 
   @media (min-width: 1024px) {
     /* grid-column-gap: 30vw; */
+    
   }
 
   & > :nth-child(1) {
@@ -83,8 +84,8 @@ const IframeWrapper = styled.div`
     color: yellow;
     margin: 0;
     padding: 0;
-    margin-left: -18px;
-    margin-top: -5px;
+    margin-left: -15px;
+    margin-top: -3px;
 
   }
   

@@ -102,6 +102,7 @@ const Form = styled.form`
   & button {
     border-radius: 8px;
     background-color: rgb(180, 224, 76);
+    cursor: pointer; 
   }
 `;
 

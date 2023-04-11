@@ -92,7 +92,7 @@ function App() {
   place-content: center;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  /* height: 100vh; */
 `
 
 
@@ -109,11 +109,13 @@ const MainContainer = styled.div`
   @media (min-width: 48em) {
     grid-template-columns: repeat(2, minmax(18.75em, 1fr));
     grid-auto-rows: auto;
+    
   }
   
   @media (min-width: 64em) {
     grid-template-columns: repeat(3, minmax(18.75em, 1fr));
     grid-auto-rows: auto;
+    
   }
 `
 
