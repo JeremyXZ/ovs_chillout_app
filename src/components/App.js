@@ -13,6 +13,7 @@ import Player from './Player';
 
 
 
+
 const GlobalStyle = createGlobalStyle`
 @font-face {
     font-family: 'Beigly';
