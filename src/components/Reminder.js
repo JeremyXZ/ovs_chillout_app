@@ -42,6 +42,8 @@ function Reminder() {
     setTime("");
     setMessage("");
     setShowReminder(false);
+    document.querySelector('input[name="activity"]').value = "";
+    document.querySelector('input[name="time"]').value = "";
   };
 
   return (
@@ -60,7 +62,13 @@ function Reminder() {
           <ul>
             {activities.map((activity, index) => (
               <li key={index}>
-                {activity} at {time}
+                {activity}
+                {time && (
+                  <>
+                  <span style={{ marginLeft: "3px", fontWeight: "bold" }}>at</span>{" "}
+                  {time}
+                  </>
+                )}
               </li>
             ))}
           </ul>
@@ -115,7 +123,7 @@ const Text = styled.div`
   display: flex;
   flex-direction: column; 
 
-  & ul {
+  & > ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -128,11 +136,11 @@ const Text = styled.div`
   }
 
 
-  & h3 + ul li: before {
+  /* & h3 + ul li: before {
     content: "•";
     margin-right: 0.5em;
 
-  }
+  } */
 
   h3 {
     display: block;
