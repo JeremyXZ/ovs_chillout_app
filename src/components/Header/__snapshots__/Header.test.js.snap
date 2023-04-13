@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should successfully render the component and match the snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="sc-beqWaB iWMlbg"
+  >
+    <div
+      class="sc-gueYoa eDkouK"
+    >
+      <iframe
+        frameborder="0"
+        height="110"
+        src="https://free.timeanddate.com/clock/i8s6z6ks/n1337/szw110/szh110/hoc000/hbw0/hfc09f/cf100/hnc07c/hwc000/fas20/facfff/fnu2/fdi76/mqcfff/mqs4/mql18/mqw4/mqd60/mhcfff/mhs4/mhl5/mhw4/mhd62/mmv0/hhcfff/hhs1/hhb10/hmcfff/hms1/hmb10/hscfff/hsw3"
+        title="local-time"
+        width="110"
+      />
+      <h3>
+        UK
+      </h3>
+    </div>
+    <h1
+      class="sc-dmqHEX eVCwyL"
+    />
+    <div
+      class="sc-gueYoa eDkouK"
+    >
+      <iframe
+        frameborder="0"
+        height="110"
+        src="https://free.timeanddate.com/clock/i8s6zcnh/n33/szw110/szh110/hoc000/hbw0/hfc09f/cf100/hnc07c/hwc000/fas20/facfff/fnu2/fdi76/mqcfff/mqs4/mql18/mqw4/mqd60/mhcfff/mhs4/mhl5/mhw4/mhd62/mmv0/hhcfff/hhs1/hhb10/hmcfff/hms1/hmb10/hscfff/hsw3"
+        title="home-time"
+        width="110"
+      />
+      <h3>
+        China
+      </h3>
+    </div>
+  </header>
+</DocumentFragment>
+`;

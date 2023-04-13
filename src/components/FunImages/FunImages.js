@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react';
 import styled from 'styled-components';
 // import Constellation from './particleImages/Constellation'
   
-export default function CodePen() {
+export default function FunImages() {
 
   const initialSlug = "VYmXLM"
   const selectedSlugs = ["gmOwJX","bGpjZwN", "MWjBRWp", "WxNVoq", "XWpMONO", "YNrvpY", "BYbjyg", "DByKvO", "wKqyqY", "DdGRYG" ]
@@ -23,6 +23,76 @@ export default function CodePen() {
   //   setPlay()
 
   // }
+
+
+  const FullScreenWrapper = styled.div`
+    
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+ 
+`;
+
+const FullImage = styled.div`
+display: flex;
+height: 100%;
+overflow: hidden;
+border: none;
+resize: both;
+
+
+`;
+
+const Wrapper = styled.div`
+height: 150px;
+/* max-height: 100%; */
+/* width: 25.5625em; */
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 0 8px;   
+
+
+@media (min-width: 768px) {
+  height: 180px;
+  padding-left: 16px;
+  justify-content: space-between;
+}
+
+`
+const Button = styled.button`      
+  width: 65px; 
+  height: 65px;
+  border-radius: 50% ;
+  background-color: blue;
+  color: white;
+  cursor: pointer; 
+  padding: 15px; 
+  align-self: center;
+  margin: 0 8px;
+
+`
+
+const Image = styled.div`
+  display: flex;
+  /* flex-grow: 1; */
+  height: 90%;
+  max-width: 80%;
+  overflow: hidden;
+  border: none;      
+`
+
+
+
 
    function CodePenEmbed() {
     useEffect(() => {
@@ -110,71 +180,7 @@ export default function CodePen() {
     )
   }
 
-  const FullScreenWrapper = styled.div`
-    
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    
-
-     
-`;
-
-const FullImage = styled.div`
-  display: flex;
-  height: 100%;
-  overflow: hidden;
-  border: none;
-  resize: both;
-
   
-`;
-
-  const Wrapper = styled.div`
-    height: 150px;
-    /* max-height: 100%; */
-    /* width: 25.5625em; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 8px;   
-
-
-    @media (min-width: 768px) {
-      height: 180px;
-      padding-left: 16px;
-      justify-content: space-between;
-  }
- 
-  `
-const Button = styled.button`      
-      width: 65px; 
-      height: 65px;
-      border-radius: 50% ;
-      background-color: blue;
-      color: white;
-      cursor: pointer; 
-      padding: 15px; 
-      align-self: center;
-      margin: 0 8px;
-    
-`
-
-const Image = styled.div`
-      display: flex;
-      /* flex-grow: 1; */
-      height: 90%;
-      max-width: 80%;
-      overflow: hidden;
-      border: none;      
-    `
   
 
 

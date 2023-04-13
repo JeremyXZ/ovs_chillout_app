@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import styled, { createGlobalStyle } from "styled-components"
-import Header from './Header'
-import Jokes from './Jokes'
-import Quotes from './Quotes'
-import CodePen from './FunImages'
-import Weather from './Weather'
-import YoutubeMusic from './Youtube'
-import Reminder from './Reminder'
-import { AnimDivider } from './Divider_styled'
-import Player from './Player';
+import Header from '../Header/Header'
+import Jokes from '../Jokes/Jokes'
+import Quotes from '../Quotes'
+import FunImages from '../FunImages/FunImages'
+import Weather from '../Weather/Weather'
+import YoutubeMusic from '../Youtube'
+import Reminder from '../Reminder'
+import { AnimDivider } from '../Divider_styled'
+import Player from '../Player';
 
 
 
@@ -60,7 +60,7 @@ function App() {
               <AnimDivider/>
             </div>
             <div>
-              <CodePen/>
+              <FunImages/>
               <AnimDivider/>
             </div>
             <div>

@@ -42,11 +42,11 @@ function Jokes() {
        
 
     return(       
-        <Wrapper onClick = {handleClick}>
+        <Wrapper onClick = {handleClick} data-testid="joke-wrapper">
             <Title>Random Joke:</Title>
             {jokes.part1 && <Text>
-                <div>{jokes.part1}</div>
-                <div>{jokes.part2}</div>
+                <div data-testid="part1">{jokes.part1}</div>
+                <div data-testid="part2">{jokes.part2}</div>
             </Text>
             }
         </Wrapper>     
