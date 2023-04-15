@@ -5,7 +5,8 @@ A webpage helping Overseas students to relax after a long hard day of learning a
 
 ## Major features:
 
-Responsive layout design:  one column for the mobile screen, 2 columns for the tablet screen and 3 columns for the larger screens.
+Responsive layout design: 
+- one column for the mobile screen, 2 columns for the tablet screen and 3 columns for the larger screens.
 
 Header: 
 - background images randomly  pulled from Unsplash site each time the page is refreshed 
@@ -22,7 +23,8 @@ Main section:
 - youtube music video clips (from Youtube API): typing in a music title/artist name will show 3 relevant video clips (if available), including
   a thumbnail, video title, artist name and album name. 
   
-  
+Unit Testing (React testing library):
+- All components have been tested (8 test suites in total)
 
 
 ### Initial planning:
