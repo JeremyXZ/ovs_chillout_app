@@ -22,7 +22,7 @@ function Quotes() {
           const data = await res.json()
           const newQuote = data[0].quote
           setQuote(newQuote)
-          console.log(newQuote)
+         
         } catch(error) {
           console.log("Error:", error)
         }        
@@ -38,9 +38,9 @@ function Quotes() {
     } 
 
     return (
-        <Wrapper onClick={handleClick}>
+        <Wrapper onClick={handleClick} data-testid='quote-wrapper'>
             <Title>Inspirational Quotes:</Title>
-            <Text>{quote}</Text>
+            <Text data-testid="quote-text">{quote}</Text>
         </Wrapper>
     )
 }

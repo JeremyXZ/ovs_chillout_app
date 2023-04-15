@@ -9,7 +9,7 @@ import { mockedProps } from "../../mockedData";
 describe("Header", () => {
     
     it("should successfully render the component and match the snapshot", () => {
-        const { asFragment } = render(<Header title={mockedProps.tiele}/>);
+        const { asFragment } = render(<Header title={mockedProps.title}/>);
         expect(asFragment()).toMatchSnapshot();
     })
 

@@ -21,7 +21,9 @@ exports[`Header should successfully render the component and match the snapshot 
     </div>
     <h1
       class="sc-dmqHEX eVCwyL"
-    />
+    >
+      My cozy space
+    </h1>
     <div
       class="sc-gueYoa eDkouK"
     >

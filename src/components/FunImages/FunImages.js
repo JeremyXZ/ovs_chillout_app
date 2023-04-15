@@ -24,8 +24,94 @@ export default function FunImages() {
 
   // }
 
+  
+   function CodePenEmbed() {
+    useEffect(() => {
+      const script = document.createElement('script');
+      script.src = 'https://cpwebassets.codepen.io/assets/embed/ei.js';
+      script.async = true;
+      document.body.appendChild(script);
+      return () => {
+        document.body.removeChild(script);
+      };
+    }, []);
 
-  const FullScreenWrapper = styled.div`
+   useEffect(() => {
+    document.addEventListener("fullscreenchange", exitFullScreen);
+    return () => {
+      document.removeEventListener("fullscreenchange", exitFullScreen);
+    };
+  }, []);
+
+  const getFullScreen = () => {
+    const doc = document.documentElement;
+    if (doc.requestFullscreen) {
+      doc.requestFullscreen();
+    }
+    setIsFullScreen(true);
+    // setImgSize({ width, height });
+  };
+
+  const exitFullScreen = () => {
+    if (document.fullscreenElement === null) {
+      setIsFullScreen(false);
+     
+    }
+  };
+  return (
+    <>    
+      <Wrapper>
+        <Button
+          onClick={handleClick}
+          
+        >Next
+        </Button>
+        <Button onClick={() => getFullScreen()}>Expand</Button> 
+        
+        <Image>
+          <img
+          // ref={imgRef}       
+          className="codepen"
+          data-height="150"         
+          data-theme-id="default"
+          data-slug-hash={slug}
+          data-default-tab="result"
+          data-preview="true" 
+          alt=''         
+          />                  
+        </Image>            
+      </Wrapper>
+      
+      {IsFullScreen && <FullScreenWrapper>
+        <FullImage>
+                 <img
+                  data-editable="true"
+                  className="codepen"
+                  data-height="60%" 
+                                    
+                  // data-theme-id="default"
+                  data-slug-hash={slug}
+                  // data-default-tab="none"
+                  data-preview="true" 
+                  alt=''
+                    style={{boxSizing: "content-box", padding: "0", margin:"0"}}
+                />          
+                
+                {/* (<Constellation width={900} height={900} />)  */}
+                
+              </FullImage>   
+              {/* <Button onClick={()=> setPlay(!play)}>playConstellation</Button>   */}
+              <Button onClick={() => setIsFullScreen(false)}>Exit full screen</Button>        
+         
+      </FullScreenWrapper>
+      }
+      </>
+    )
+  }
+  return <CodePenEmbed />
+}
+
+const FullScreenWrapper = styled.div`
     
   position: fixed;
   top: 0;
@@ -90,99 +176,3 @@ const Image = styled.div`
   overflow: hidden;
   border: none;      
 `
-
-
-
-
-   function CodePenEmbed() {
-    useEffect(() => {
-      const script = document.createElement('script');
-      script.src = 'https://cpwebassets.codepen.io/assets/embed/ei.js';
-      script.async = true;
-      document.body.appendChild(script);
-      return () => {
-        document.body.removeChild(script);
-      };
-    }, []);
-
-   useEffect(() => {
-    document.addEventListener("fullscreenchange", exitFullScreen);
-    return () => {
-      document.removeEventListener("fullscreenchange", exitFullScreen);
-    };
-  }, []);
-
-  const getFullScreen = () => {
-    const doc = document.documentElement;
-    if (doc.requestFullscreen) {
-      doc.requestFullscreen();
-    }
-    setIsFullScreen(true);
-    // setImgSize({ width, height });
-  };
-
-  const exitFullScreen = () => {
-    if (document.fullscreenElement === null) {
-      setIsFullScreen(false);
-     
-    }
-  };
-
-
-  return (
-    <>    
-      <Wrapper>
-        <Button
-          onClick={handleClick}
-          
-        >Next
-        </Button>
-        <Button onClick={() => getFullScreen()}>Expand</Button> 
-        
-        <Image>
-          <img
-          // ref={imgRef}       
-          className="codepen"
-          data-height="150"         
-          data-theme-id="default"
-          data-slug-hash={slug}
-          data-default-tab="result"
-          data-preview="true" 
-          alt=''         
-          />                  
-        </Image>            
-      </Wrapper>
-      {IsFullScreen && <FullScreenWrapper>
-        <FullImage>
-                 <img
-                  data-editable="true"
-                  className="codepen"
-                  data-height="60%" 
-                                    
-                  // data-theme-id="default"
-                  data-slug-hash={slug}
-                  // data-default-tab="none"
-                  data-preview="true" 
-                  alt=''
-                    style={{boxSizing: "content-box", padding: "0", margin:"0"}}
-                />          
-                
-                {/* (<Constellation width={900} height={900} />)  */}
-                
-              </FullImage>   
-              {/* <Button onClick={()=> setPlay(!play)}>playConstellation</Button>   */}
-              <Button onClick={() => setIsFullScreen(false)}>Exit full screen</Button> 
-        
-         
-      </FullScreenWrapper>
-      }
-      </>
-    )
-  }
-
-  
-  
-
-
-  return <CodePenEmbed />
-}

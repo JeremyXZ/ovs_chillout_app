@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import styled, { createGlobalStyle } from "styled-components"
 import Header from '../Header/Header'
 import Jokes from '../Jokes/Jokes'
-import Quotes from '../Quotes'
+import Quotes from '../Quotes/Quotes'
 import FunImages from '../FunImages/FunImages'
 import Weather from '../Weather/Weather'
-import YoutubeMusic from '../Youtube'
-import Reminder from '../Reminder'
+import Youtube from '../Youtube/Youtube'
+import Reminder from '../Reminder/Reminder'
 import { AnimDivider } from '../Divider_styled'
 import Player from '../Player';
 
@@ -64,7 +64,7 @@ function App() {
               <AnimDivider/>
             </div>
             <div>
-              <YoutubeMusic setMusics={setMusics}/>
+              <Youtube setMusics={setMusics}/>
               <AnimDivider/>  
             </div>
             {musics && (

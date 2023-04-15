@@ -2,6 +2,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { act } from 'react-dom/test-utils';
 
 import FunImages from "./FunImages";
 
@@ -21,19 +22,27 @@ describe('FunImages', () => {
         render(<FunImages/>)
         const nextButton = screen.getByRole('button', {name: /next/i})
         const image = screen.getByRole('img')
-        userEvent.click(nextButton)
-        expect(image).toHaveAttribute("data-slug-hash", "VYmXLM")
+
+        act(() => () => {
+            userEvent.click(nextButton)
+        })        
+        expect(image).toHaveAttribute('data-slug-hash', 'VYmXLM')
 
     })
 
-    test('getFullScreen is called when button is clicked', () => {
+    test('getFullScreen is called when button is clicked', async () => {
         const mockedRequest = jest.fn();
         document.documentElement.requestFullscreen = mockedRequest;
     
         render(<FunImages/>);
     
+    
         const expandButton = screen.getByRole('button', { name: /expand/i });
-        userEvent.click(expandButton);
+
+        act(() => {
+            userEvent.click(expandButton);
+        })
+        
     
         expect(mockedRequest).toHaveBeenCalled();
         

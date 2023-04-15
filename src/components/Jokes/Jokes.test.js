@@ -4,16 +4,16 @@ import { screen, render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 
-import Jokes from './Jokes'
+import Jokes from "./Jokes"
 
 describe('Jokes', () => {
-    it('should render the title', () => {
+    it('should render title', () => {
         render(<Jokes/>)
         const title = screen.getByText(/random joke/i)
         expect(title).toBeInTheDocument()
     })
 
-    it('should fetch and display a joke', async () => {
+    it('should fetch and display a joke when wrapper is clicked', async () => {
         render(<Jokes />)
         const wrapper = screen.getByTestId('joke-wrapper');
         expect(wrapper).toBeInTheDocument()

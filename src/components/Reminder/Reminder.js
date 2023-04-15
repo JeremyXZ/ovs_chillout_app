@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import Modal from "react-modal"
-import reminderSign from '../images/timeToDo.jpeg'
-
-Modal.setAppElement("#root")
+import ReactModal from "react-modal"
+import reminderSign from "../../images/timeToDo.jpeg"
 
 function Reminder() {
   const [activities, setActivities] = useState([])
@@ -50,9 +48,9 @@ function Reminder() {
     <Wrapper>
       <Form onSubmit={handleSubmit}>
         <label htmlFor="activity">Activity:</label>
-        <input type="text" name="activity" />
+        <input type="text" name="activity" id="activity" data-testid="activity-input"/>
         <label htmlFor="time">Time (24-hour format):</label>
-        <input type="text" name="time" placeholder="15:38" />
+        <input type="text" name="time" placeholder="15:38" id="time" data-testid="time-input"/>
         <button type="submit">Add activity</button>
         <button onClick={removeActivities}>Remove activities</button>
       </Form>
@@ -74,7 +72,7 @@ function Reminder() {
           </ul>
         </Text>
       )}
-      <Modal
+      <ReactModal
         isOpen={showReminder}
         onRequestClose={() => setShowReminder(false)}
         contentLabel="friendly reminder"
@@ -84,7 +82,7 @@ function Reminder() {
         <p>{message}</p>
         <img src={reminderSign} alt="reminder sign"/>
         <button onClick={() => setShowReminder(false)}>Close</button>
-      </Modal>
+      </ReactModal>
     </Wrapper>
   );
 }

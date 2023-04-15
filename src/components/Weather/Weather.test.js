@@ -24,7 +24,7 @@ describe('Weather', () => {
     it('should display weather text when the component is rendered', async () => {
         render(<Weather/>)
             const weatherText = await screen.findByText((content, element) => {
-            return element.tagName.toLowerCase() === 'p' && content.includes("Current temperature in")
+            return element.tagName.toLowerCase() === 'p' && content.includes('Current temperature in')
         })
        expect(weatherText).toBeInTheDocument()
     })

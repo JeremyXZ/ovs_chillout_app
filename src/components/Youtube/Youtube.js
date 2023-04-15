@@ -12,7 +12,7 @@ const options = {
 	}
 };
 
-function YoutubeMusic({setMusics}) {
+function Youtube({setMusics}) {
    
     const [title, setTitle] = useState('')
 
@@ -33,6 +33,10 @@ function YoutubeMusic({setMusics}) {
 
     function handleSubmit(e) {
         e.preventDefault()
+        if(title.trim() === "") {
+            alert('Please enter a search term')
+            return
+        }
         getMusics(title)
         setTitle('')
     }
@@ -55,6 +59,7 @@ function YoutubeMusic({setMusics}) {
                         }}
                 ></input>
                 <button 
+                    type = "submit"
                     style = {{padding: "10px 20px",                    
                     backgroundColor: "rgb(180, 224, 76)",
                     borderRadius: "5px",
@@ -93,4 +98,4 @@ const Wrapper = styled.form`
 // `
 
 
-export default YoutubeMusic
+export default Youtube
