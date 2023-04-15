@@ -4,8 +4,8 @@ import styled from 'styled-components';
   
 export default function FunImages() {
 
-  const initialSlug = "VYmXLM"
-  const selectedSlugs = ["gmOwJX","bGpjZwN", "MWjBRWp", "WxNVoq", "XWpMONO", "YNrvpY", "BYbjyg", "DByKvO", "wKqyqY", "DdGRYG" ]
+  const initialSlug = "gmOwJX"
+  const selectedSlugs = ["bGpjZwN", "MWjBRWp", "WxNVoq", "XWpMONO", "YNrvpY", "BYbjyg", "DByKvO", "wKqyqY", "DdGRYG", "VYmXLM" ]
   const [slug, setSlug] = useState(initialSlug)
   const [IsFullScreen, setIsFullScreen] = useState(false)
   // const [imageSize, setImageSize] = useState({ width: null, height: null });
