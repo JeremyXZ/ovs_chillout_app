@@ -1,55 +1,46 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 
-const rapidKey = process.env.REACT_APP_RAPID_API_KEY;
-
-const quoteOptions = {
-  headers: {
-    "X-RapidAPI-Key": `${rapidKey}`,
-    "X-RapidAPI-Host":
-      "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
-  },
-  params: {
-    token: "ipworld.info",
-  },
-};
-
 function Quotes() {
-  const [quote, setQuote] = useState("");
-  const [author, setAuthor] = useState("");
-  async function getQuote() {
+  const [quotes, setQuotes] = useState([]);
+  const [randomQuote, setRandomQuote] = useState(null);
+
+  const isEmpty = Object.keys(quotes).length === 0;
+
+  async function getQuotes() {
     try {
-      const res = await fetch(
-        "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote",
-        quoteOptions
-      );
+      const res = await fetch("https://type.fit/api/quotes");
       const data = await res.json();
-      const newQuote = data.text;
-      const newAuthor = data.author;
-      setQuote(newQuote);
-      setAuthor(newAuthor);
+
+      setQuotes(data);
     } catch (error) {
       console.log("Error:", error);
     }
   }
 
   useEffect(() => {
-    getQuote();
+    getQuotes();
   }, []);
 
-  // const handleClick = () => {
-  //   getQuote();
-  // };
+  const getRandomQuote = useCallback(() => {
+    if (quotes.length > 0) {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      setRandomQuote(quotes[randomIndex]);
+    }
+  }, [quotes]);
+
+  useEffect(() => {
+    getRandomQuote();
+  }, [quotes, getRandomQuote]);
 
   return (
     <Wrapper data-testid="quote-wrapper">
       <Title>Daily Inspirational Quotes:</Title>
-      {quote ? (
+      {!isEmpty && (
         <Text data-testid="quote-text">
-          {quote} - {author}
+          {randomQuote?.text}
+          {" - "} {randomQuote?.author}
         </Text>
-      ) : (
-        <Text>Quote unavailable temporarily, sorry.</Text>
       )}
     </Wrapper>
   );
