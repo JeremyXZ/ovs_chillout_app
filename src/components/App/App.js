@@ -65,16 +65,18 @@ function App() {
         {musics &&
           musics.map((music) => (
             <InfoWrapper
-              key={music.videoId}
+              key={music.id.videoId}
               onClick={() => setIsFullScreen(!isFullScreen)}
             >
               <Info>
                 <Text>
-                  <li>Title: {music.title}</li>
-                  <li>Artist: {music.artists?.[0]?.name}</li>
-                  <li>Duration: {music.duration}</li>
+                  <li>Title: {music.snippet.title}</li>
+                  <li>Channel title: {music.snippet.channelTitle}</li>
+                  <li>
+                    Published on: {music.snippet.publishedAt.split("T")[0]}
+                  </li>
                 </Text>
-                <Player videoId={music.videoId} />
+                <Player videoId={music.id.videoId} />
               </Info>
               <AnimDivider />
             </InfoWrapper>

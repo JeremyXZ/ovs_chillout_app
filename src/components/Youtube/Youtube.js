@@ -1,34 +1,37 @@
 import styled from "styled-components";
 import React, { useState } from "react";
 
-const rapidKey = process.env.REACT_APP_RAPID_API_KEY;
+// const rapidKey = process.env.REACT_APP_RAPID_API_KEY;
+const youtubeApiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
 
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": rapidKey,
-    "X-RapidAPI-Host": "youtube-music-api-detailed.p.rapidapi.com",
-  },
-};
+// const options = {
+//   method: "GET",
+//   headers: {
+//     "X-RapidAPI-Key": rapidKey,
+//     "X-RapidAPI-Host": "youtube-music-api-detailed.p.rapidapi.com",
+//   },
+// };
 
 function Youtube({ setMusics }) {
   const [title, setTitle] = useState("");
 
   async function getMusics(title) {
     // title = encodeURIComponent(title);
-    const url = `https://youtube-music-api-detailed.p.rapidapi.com/popular/search?lang=en&query=${title}&limit=10`;
+    // const url = `https://youtube-music-api-detailed.p.rapidapi.com/popular/search?lang=en&query=${title}&limit=10`;
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${title}&maxResults=9&type=video&key=${youtubeApiKey}`;
 
     try {
-      const res = await fetch(url, options);
+      const res = await fetch(url);
 
       const data = await res.json();
-      const playableMusics = data.filter((data) => data.videoId);
+      const allMusics = data.items;
+      const playableMusics = allMusics.filter((music) => music.id.videoId);
       const random6Items = playableMusics
         .sort(() => Math.random() - 0.5)
         .slice(0, 6);
 
       setMusics(random6Items);
-      console.log("value of musics state variable", data);
+      console.log("value of musics state variable", random6Items);
     } catch (err) {
       console.log("Error:", err);
     }
@@ -46,6 +49,8 @@ function Youtube({ setMusics }) {
 
   console.log("title", title);
   // console.log("music array", musics)
+
+  console.log("api key", youtubeApiKey);
   return (
     <Wrapper onSubmit={handleSubmit}>
       <input
