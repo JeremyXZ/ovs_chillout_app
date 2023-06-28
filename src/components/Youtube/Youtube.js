@@ -31,7 +31,6 @@ function Youtube({ setMusics }) {
         .slice(0, 6);
 
       setMusics(random6Items);
-      console.log("value of musics state variable", random6Items);
     } catch (err) {
       console.log("Error:", err);
     }
@@ -47,10 +46,6 @@ function Youtube({ setMusics }) {
     setTitle("");
   }
 
-  console.log("title", title);
-  // console.log("music array", musics)
-
-  console.log("api key", youtubeApiKey);
   return (
     <Wrapper onSubmit={handleSubmit}>
       <input

@@ -31,8 +31,6 @@ function App() {
   const [musics, setMusics] = useState([]);
   const [isFullScreen, setIsFullScreen] = useState(false);
 
-  console.log("type " + typeof musics, musics);
-
   return (
     <Wrapper>
       <GlobalStyle />

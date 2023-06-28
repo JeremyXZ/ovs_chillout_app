@@ -12,7 +12,6 @@ export async function getImage(setImageUrl) {
     setImageUrl(url);
 
     console.log("success to fetch");
-    console.log("unsplash api key", unsplashApiKey);
   } catch (err) {
     console.log("Error:", err);
   }
