@@ -85,7 +85,7 @@ const IframeWrapper = styled.div`
     margin: 0;
     padding: 0;
     margin-left: -15px;
-    margin-top: -3px;
+    margin-top: -1px;
   }
 
   & > iframe {
