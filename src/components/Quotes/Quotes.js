@@ -4,7 +4,6 @@ import styled from "styled-components";
 const rapidKey = process.env.REACT_APP_RAPID_API_KEY;
 
 const quoteOptions = {
-  method: "GET",
   headers: {
     "X-RapidAPI-Key": `${rapidKey}`,
     "X-RapidAPI-Host":
@@ -45,9 +44,13 @@ function Quotes() {
   return (
     <Wrapper data-testid="quote-wrapper">
       <Title>Daily Inspirational Quotes:</Title>
-      <Text data-testid="quote-text">
-        {quote} - {author}
-      </Text>
+      {quote ? (
+        <Text data-testid="quote-text">
+          {quote} - {author}
+        </Text>
+      ) : (
+        <Text>Quote unavailable temporarily, sorry.</Text>
+      )}
     </Wrapper>
   );
 }
