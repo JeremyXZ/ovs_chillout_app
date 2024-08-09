@@ -1,6 +1,5 @@
 # ovs_chillout_app
 
-## Demo site: https://overseas-student-chill-out-app.netlify.app/
 
 A webpage helping Overseas students to relax after a long hard day of learning at universities/colleges.
 
